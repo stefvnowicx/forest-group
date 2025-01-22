@@ -1,0 +1,157 @@
+@use "../utils/utils.scss" as *;
+
+.main {
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+}
+.header {
+   position: relative;
+   width: 100%;
+   padding: 0.5em;
+   min-height: 480px;
+   z-index: 1;
+   text-align: center;
+   @include flex-column;
+   color: $white;
+   &__bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../../dist/img/jungle-1807476_1920.jpg");
+      background-size: cover;
+      background-position: 40% center;
+      z-index: -10;
+   }
+   &__shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.65);
+      z-index: -1;
+   }
+   &__upper-text {
+      font-size: 1.4em;
+   }
+   &__title {
+      max-width: 300px;
+   }
+}
+
+.aboutus{
+    position: relative;
+    width: 100%;
+    padding: 1em;
+    @include flex-column;
+    &__title{
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: 'Montserrat';
+        padding: 0.5em;
+        font-size: 2em;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 50%;
+            bottom: 15%;
+            width: 80%;
+            height: 2px;
+            background-color: $black;
+            transform: translateX(-50%);
+        }
+    }
+    &__box{
+        @include flex-column;
+        text-align: center;
+    }
+    &__img{
+        background-image: url('../../../dist/img/waters-3095682_1920.jpg');
+        width: 280px;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        margin: 1em 0 2em 0;
+    }
+    &__heading{
+        font-size: 1.4em;
+        letter-spacing: 1px;
+        margin-bottom: 1em;
+    }
+    &__text{
+        width: 280px;
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+}
+
+// sm
+@media (min-width: 576px) {
+   .header {
+      min-height: 575px;
+      &__upper-text {
+         font-size: 2em;
+      }
+      &__title {
+         font-size: 3em;
+         max-width: 550px;
+      }
+   }
+   .aboutus{
+    &__img{
+        width: 450px;
+        height: 400px;
+   }
+   &__text{
+    width: 400px;
+   }
+   &__heading{
+    font-size: 1.8em;
+   }
+}
+}
+// md
+@media (min-width: 768px) {
+}
+
+// lg
+
+@media (min-width: 992px) {
+   .header {
+      min-height: 400px;
+      &__text{
+        width: 992px;
+        @include flex-column;
+        align-items: start;
+        text-align: left;
+      }
+      &__upper-text {
+         font-size: 1.4em;
+      }
+      &__title {
+         font-size: 2em;
+         max-width: 100%;
+      }
+   }
+}
+@media (min-width: 1200px) {
+   .header {
+      &__text{
+        width: 1200px;
+        @include flex-column;
+        align-items: start;
+        text-align: left;
+      }
+      &__upper-text {
+         font-size: 1.4em;
+      }
+      &__title {
+         font-size: 2.6em;
+         max-width: 100%;
+      }
+   }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="./dist/css/style.min.css" />
    </head>
    <body>
-        
+        <!-- burger -->
 <button class="burger-btn">
    <div class="burger-btn__box">
       <div class="burger-btn__bars-top"></div>
@@ -20,23 +20,57 @@
    </div>
 </button>
 
-<header class="header-mobile"><i class="fa-solid fa-tree"></i> Forest</header>
-
+<!-- nav desktop -->
+<nav class="nav__desktop">
+   <div class="nav__desktop-box">
+      <!-- logo -->
+      <div href="#" class="nav__logo"><a href="" class="nav__logo-link"><i class="fa-solid fa-tree"></i> Forest </a></div>
+      <!-- nav desktop menu -->
+      <nav class="nav nav__desktop-menu">
+         <a href="#" class="nav__desktop-link">Home</a>
+         <a href="#aboutus" class="nav__desktop-link">O nas</a>
+         <a href="#offer" class="nav__desktop-link">Oferta</a>
+         <a href="#contact" class="nav__desktop-link">Kontakt</a>
+      </nav>
+   </div>
+</nav>
 <!-- nav mobile -->
 <nav class="nav nav__mobile">
-      <a href="#" class="nav__mobile-link">Home</a>
-      <a href="#aboutus" class="nav__mobile-link">O nas</a>
-      <a href="#offer" class="nav__mobile-link">Oferta</a>
-      <a href="#contact" class="nav__mobile-link">Kontakt</a>
-</nav>
-<!-- nav desktop -->
-<nav class="nav nav__desktop">
    <a href="#" class="nav__mobile-link">Home</a>
    <a href="#aboutus" class="nav__mobile-link">O nas</a>
    <a href="#offer" class="nav__mobile-link">Oferta</a>
    <a href="#contact" class="nav__mobile-link">Kontakt</a>
 </nav>
 
+         <!-- main -->
+         <main class="main">
+            <!-- header -->
+         <header class="header">
+            <div class="header__bg"></div>
+            <div class="header__shadow"></div>
+            <div class="header__text">
+               <p class="header__upper-text">Forest Group</p>
+               <h1 class="header__title">Najpiękniejszy park w Twojej okolicy!</h1>
+            </div>
+         </header>
+         <!-- aboutus -->
+          <section class="aboutus" id="aboutus">
+            <h2 class="aboutus__title">o nas</h2>
+            <div class="aboutus__box">
+               <div class="aboutus__img"></div>
+               <div class="aboutus__text-box">
+                  <h3 class="aboutus__heading">Niezapomniane przygody</h3>
+                  <p class="aboutus__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                     commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                     velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                     laborum. www.MMCSchool.pl
+                     </p>
+            </div>
+          </section>
+         </main>
       <script src="./dist/js/main.min.js"></script>
    </body>
 </html>

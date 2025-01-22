@@ -11,7 +11,7 @@
    z-index: 1000;
    &:focus {
       outline: none;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.381);
       border-radius: 5px;
    }
    &__box {
@@ -133,8 +133,18 @@
          display: none;
       }
       &__desktop {
+         position: fixed;
          width: 100%;
+         background-color: $white;
          @include flex;
+         z-index: 1000;
+         &::after{
+            content: '';
+            position: absolute;left: 0;bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $black;
+         }
          &-box {
             width: 992px;
             display: flex;

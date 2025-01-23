@@ -53,6 +53,9 @@
    &--active .burger-btn__bars-bottom {
       transform: translate(-90%, -50%);
    }
+   &__bars-colored{
+      background-color: $white;
+   }
 }
 
 .nav {
@@ -163,7 +166,7 @@
             text-decoration: none;
             color: $black;
             z-index: 1;
-            transition: color 0.3s;
+            transition: color 0.3s, transform .3s;
             &::after {
                position: absolute;
                content: "";
@@ -178,9 +181,17 @@
             }
             &:hover {
                color: $white;
+               
             }
             &:hover::after {
                height: 80%;
+            }
+            &--active{
+               transform: scale(1.1);
+               color: $white;
+               &::after{
+               height: 80%;
+               }
             }
          }
       }

@@ -15,7 +15,7 @@
       <!-- main -->
       <main class="main">
          <!-- header -->
-         <header class="header">
+         <header class="section header white-section" id="header">
             <div class="header__bg"></div>
             <div class="header__shadow"></div>
             <div class="header__text">
@@ -24,7 +24,7 @@
             </div>
          </header>
          <!-- aboutus -->
-         <section class="aboutus" id="aboutus">
+         <section class="section aboutus" id="aboutus">
             <h2 class="aboutus__title">o nas</h2>
             <div class="aboutus__box">
                <div class="aboutus__img"></div>
@@ -39,17 +39,16 @@
             </div>
          </section>
          <!-- divider -->
-         <div class="divider">
+         <div class="divider section " id="divider">
             <div class="divider__img"></div>
             <div class="divider__shadow"></div>
             <p class="divider__text">Przygoda dla całej rodziny</p>
          </div>
          <!-- offer -->
-         <section class="offer" id="offer">
+         <section class="section offer" id="offer">
             <h2 class="offer__title">oferta</h2>
             <p class="offer__text">Wybierz jedną z naszych wspaniałych opcji!</p>
             <div class="offer__box">
-               
                <div class="offer__card">
                   <p class="offer__card-title">Demo</p>
                   <h3 class="offer__card-price">$0</h3>
@@ -88,11 +87,14 @@
                   </div>
                   <button class="offer__btn">Wybierz</button>
                </div>
-
-
             </div>
+            <h3 class="offer__lower-text">
+               Nie znalazłeś <a href="offer.html" class="offer__lower-text-link" >oferty</a> dla siebie? Sprawdź więcej możliwości w podstronie <a href="offer.html" class="offer__lower-text-link" >oferty</a>!
+            </h3>
          </section>
       </main>
+      <!-- @include 'footer.kit' -->
+
       <script src="./dist/js/main.min.js"></script>
    </body>
 </html>

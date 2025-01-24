@@ -17,7 +17,7 @@
    &__title {
       position: relative;
       text-transform: uppercase;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       font-weight: 500;
       padding: 0.5em;
       font-size: 2em;
@@ -65,7 +65,7 @@
          padding: 2em 0;
          font-size: 1em;
          line-height: 1.6em;
-         align-items: start;
+         align-items: center;
       }
       &-title {
          font-size: 2em;
@@ -77,7 +77,7 @@
          font-weight: 700;
       }
       &-option {
-         font-size: .8em;
+         font-size: 0.8em;
          .fa-check {
             color: limegreen;
          }
@@ -213,6 +213,9 @@
          font-size: 3em;
          margin-top: 1.5em;
       }
+      &__description {
+         align-items: flex-start;
+      }
       &__text {
          font-size: 1.4em;
       }
@@ -220,7 +223,8 @@
          flex-direction: row;
       }
       &__card {
-         max-width: 200px;
+         min-width: 280px;
+         max-width: 320px;
          margin: 2em;
          &-title {
             font-size: 2em;

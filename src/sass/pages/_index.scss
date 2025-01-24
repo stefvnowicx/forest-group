@@ -3,7 +3,6 @@
 .main {
    position: relative;
    width: 100%;
-   min-height: 100vh;
 }
 .header {
    position: relative;
@@ -20,8 +19,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      // background-image: url("../../../dist/img/jungle-1807476_1920.jpg");
-      background-image: url("./dist/img/jungle-1807476_1920.jpg");
+      background-image: url('../../../dist/img/jungle-1807476_1920.jpg');
       background-size: cover;
       background-position: 40% center;
       z-index: -10;

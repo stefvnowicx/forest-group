@@ -18,7 +18,8 @@ allMobileLinks.forEach((link) => {
 });
 
 burgerBtn.addEventListener("click", handleNav);
-// animacje do linkow desktop
+
+// animacje do linkow desktop przy hover
 links.forEach((link) => {
    link.addEventListener("mouseenter", () => {
       links.forEach((otherLink) => {
@@ -48,24 +49,26 @@ const handleCurrentYear = () => {
    footerYear.innerText = year;
 };
 handleCurrentYear();
-
+// scrollspy --- linki
 const handleLinks = () => {
-   links.forEach((link) => {
-      link.classList.remove("nav__desktop-link--active");
-      if (link.hash === `#${sectionID}`) {
-         link.classList.add("nav__desktop-link--active");
-      }
-   });
+    links.forEach((link, index) => {
+       link.classList.remove("nav__desktop-link--active");
 
-   links.forEach((otherLink) => {
-      if (!otherLink.classList.contains("nav__desktop-link--active")) {
-         otherLink.style.transform = "scale(0.85)";
-      } else {
-         otherLink.style.transform = "scale(1)";
-      }
-   });
-};
-
+       if (sectionID === "nav" && index === 0) {
+          link.classList.add("nav__desktop-link--active");
+       } else if (link.hash === `#${sectionID}`) {
+          link.classList.add("nav__desktop-link--active");
+       }
+    });
+    links.forEach((otherLink) => {
+       if (!otherLink.classList.contains("nav__desktop-link--active")) {
+        //   otherLink.style.transform = "scale(0.85)";
+       } else {
+          otherLink.style.transform = "scale(1)";
+       }
+    });
+ };
+// zmiana koloru burgera
 const handleBurgerColors = () => {
    if (sectionID === "header" || sectionID === "divider") {
       burgerBtnBars.forEach((bar) => {
@@ -95,6 +98,7 @@ const handleObserver = () => {
 
       if (currentSection <= 60) {
          sectionID = "nav";
+         handleLinks()
          handleBurgerColors();
          return;
       }
@@ -116,3 +120,4 @@ document.addEventListener("DOMContentLoaded", () => {
    handleObserver();
    handleBurgerColors();
 });
+

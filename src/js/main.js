@@ -31,14 +31,24 @@ links.forEach((link) => {
       link.style.transform = "scale(1.1)";
    });
    link.addEventListener("mouseleave", () => {
+      // aktualizuje sectionID przed sprawdzeniem
+      handleObserver();
+   
       links.forEach((otherLink) => {
          if (otherLink !== link) {
             otherLink.style.transform = "scale(1)";
+   
             if (otherLink.hash === `#${sectionID}`) {
                otherLink.classList.add("nav__desktop-link--active");
-            }
+            } else if (otherLink.hash === "#header" && sectionID === "nav") {
+               otherLink.classList.add("nav__desktop-link--active");
+            } else if (window.location.pathname.includes("offer.html")) {
+               handleLinks(); 
+               return;
+            } 
          }
       });
+   
       link.style.transform = "scale(1)";
    });
 });
@@ -51,23 +61,25 @@ const handleCurrentYear = () => {
 handleCurrentYear();
 // scrollspy --- linki
 const handleLinks = () => {
-    links.forEach((link, index) => {
+   links.forEach((link) => {
        link.classList.remove("nav__desktop-link--active");
 
-       if (sectionID === "nav" && index === 0) {
-          link.classList.add("nav__desktop-link--active");
-       } else if (link.hash === `#${sectionID}`) {
-          link.classList.add("nav__desktop-link--active");
+       // Dla strony offer.html
+       if (window.location.pathname.includes('offer.html')) {
+           if (link.hash === '#offer') {
+               link.classList.add("nav__desktop-link--active");
+           }
+       } 
+       // Dla strony index.html
+       else {
+           if (sectionID === "nav" && link.hash === '#header') {
+               link.classList.add("nav__desktop-link--active");
+           } else if (link.hash === `#${sectionID}`) {
+               link.classList.add("nav__desktop-link--active");
+           }
        }
-    });
-    links.forEach((otherLink) => {
-       if (!otherLink.classList.contains("nav__desktop-link--active")) {
-        //   otherLink.style.transform = "scale(0.85)";
-       } else {
-          otherLink.style.transform = "scale(1)";
-       }
-    });
- };
+   });
+};
 // zmiana koloru burgera
 const handleBurgerColors = () => {
    if (sectionID === "header" || sectionID === "divider") {

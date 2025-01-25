@@ -30,7 +30,7 @@
           <a href="index.html" class="nav__desktop-link nav__desktop-link">Home</a>
           <a href="index.html" class="nav__desktop-link">O nas</a>
           <a href="index.html" class="nav__desktop-link">Oferta</a>
-          <a href="contact.html" class="nav__desktop-link">Kontakt</a>
+          <a href="#contact" class="nav__desktop-link">Kontakt</a>
        </nav>
     </div>
  </nav>
@@ -43,9 +43,22 @@
  </nav>
  
       <main class="main">
-         <section class="contact">
+         <section class="contact" id="contact">
             <h2 class="contact__title">Kontakt</h2>
+            <form class="contact__form">
+               <h3 class="contact__form-title">Formularz kontaktowy</h3>
+               <div class="contact__form-box"><input type="text" class="contact__form-input" id="name" /><label for="name" class="contact__form-label">Imię</label>
+               <p class="contact__form-error">Musisz wypełnić te pole!</p></div>
+               <div class="contact__form-box"><input type="mail" class="contact__form-input" id="email" /><label for="email" class="contact__form-label">Email</label>
+               <p class="contact__form-error">Musisz wypełnić te pole!</p></div>
 
+               <div class="contact__form-box">
+                  <textarea id="msg" class="contact__form-textarea"></textarea>
+                  <label for="msg" class="contact__form-label">Twoja wiadomość</label>
+                  <p class="contact__form-error">Musisz wypełnić te pole!</p>
+               </div>
+               <button class="contact__form-btn">Wyślij</button>
+            </form>
          </section>
       </main>
       <footer class="footer">

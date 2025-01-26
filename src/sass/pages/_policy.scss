@@ -1,0 +1,81 @@
+@use "../utils/utils.scss" as *;
+
+.policy {
+   position: relative;
+   width: 100%;
+   padding: 1em;
+   @include flex-column;
+   &__title {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-family: "Montserrat";
+      padding: 0.5em;
+      font-size: 2em;
+      text-align: center;
+      &::after {
+         position: absolute;
+         content: "";
+         left: 50%;
+         bottom: 15%;
+         width: 80%;
+         height: 5px;
+         background-color: $main-color;
+         transform: translateX(-50%);
+      }
+   }
+   &__box {
+      width: 80%;
+      min-width: 280px;
+      @include flex-column;
+      text-align: center;
+      li,
+      p {
+         margin-bottom: 1em;
+      }
+      ul, ol {
+        list-style-position: inside;
+      }
+      li::marker{
+        font-weight: bold;
+      }
+   }
+   &__bold-text {
+      padding: 1em 0;
+   }
+}
+
+@media (min-width: 768px) {
+    .policy{
+        &__box{
+            font-size: 1.2em;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .policy{
+        &__title{
+            margin-top: 3em;
+        }
+        &__box{
+            width: 80%;
+            max-width: 992px;
+            text-align: left;
+            font-size: 1.4em;
+            ul, ol {
+                list-style-position: outside;
+              }
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .policy{
+        &__box{
+            width: 80%;
+            max-width: 1200px;
+            text-align: left;
+            font-size: 1.5em;
+        }
+    }
+}
+

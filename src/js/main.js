@@ -144,3 +144,17 @@ document.addEventListener("DOMContentLoaded", () => {
    handleBurgerColors();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+   // Dodaj transition do kart po inicjalizacji AOS
+   const cards = document.querySelectorAll(".offer__card");
+   const otherCards = document.querySelectorAll(".other-offers__card")
+   
+
+   cards.forEach((card) => {
+     card.style.transition = "all 0.3s ease";
+   });
+
+   otherCards.forEach((card) => {
+     card.style.transition = "all 0.3s ease";
+   });
+ });

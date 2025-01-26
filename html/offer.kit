@@ -8,19 +8,19 @@
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
       <link rel="stylesheet" href="./dist/css/style.min.css" />
    </head>
    <body>
       <!-- @include 'nav--offer.kit' -->
       <main class="main">
          <section class="other-offers" id="offer">
-            <h2 class="other-offers__title">pozostałe oferty</h2>
-            <p class="other-offers__text">Wybierz jedną z naszych wspaniałych opcji!</p>
+            <h2 class="other-offers__title" data-aos="fade-up">pozostałe oferty</h2>
+            <p class="other-offers__text" data-aos="fade-up" data-aos-delay="150">Wybierz jedną z naszych wspaniałych opcji!</p>
             <div class="other-offers__box">
-
-               <div class="other-offers__card">
+               <div class="other-offers__card" data-aos="fade-up" data-aos-delay="300">
                   <p class="other-offers__card-title">Biznes</p>
-                  <h3 class="other-offers__card-price"> $499</h3>
+                  <h3 class="other-offers__card-price">$499</h3>
                   <div class="other-offers__card-description">
                      <p class="other-offers__card-option"><i class="fa-solid fa-check"></i> Wsparcie techniczne</p>
                      <p class="other-offers__card-option"><i class="fa-solid fa-check"></i> Integracja z narzędziami analitycznymi</p>
@@ -31,7 +31,7 @@
                   <button class="other-offers__btn">Wybierz</button>
                </div>
 
-               <div class="other-offers__card">
+               <div class="other-offers__card" data-aos="fade-up" data-aos-delay="450">
                   <p class="other-offers__card-title">Enterprise</p>
                   <h3 class="other-offers__card-price">$999</h3>
                   <div class="other-offers__card-description">
@@ -44,7 +44,7 @@
                   <button class="other-offers__btn">Wybierz</button>
                </div>
 
-               <div class="other-offers__card">
+               <div class="other-offers__card" data-aos="fade-up" data-aos-delay="600">
                   <p class="other-offers__card-title">Ultimate</p>
                   <h3 class="other-offers__card-price">$1999</h3>
                   <div class="other-offers__card-description">
@@ -60,6 +60,14 @@
          </section>
       </main>
       <!-- @include 'footer.kit' -->
-      <script src="./dist/js/bundle.min.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init({
+            startEvent: "DOMContentLoaded",
+            offset: 100,
+            once: true,
+         });
+      </script>
+      <script src="./dist/js/main.min.js"></script>
    </body>
 </html>

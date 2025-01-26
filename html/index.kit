@@ -8,6 +8,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
       <link rel="stylesheet" href="./dist/css/style.min.css" />
    </head>
    <body>
@@ -19,16 +20,16 @@
             <div class="header__bg"></div>
             <div class="header__shadow"></div>
             <div class="header__text">
-               <p class="header__upper-text">Forest Group</p>
-               <h1 class="header__title">Najpiękniejszy park w Twojej okolicy!</h1>
+               <p class="header__upper-text" data-aos="fade-up" data-aos-delay="300">Forest Group</p>
+               <h1 class="header__title" data-aos="fade-up" data-aos-delay="450">Najpiękniejszy park w Twojej okolicy!</h1>
             </div>
          </header>
          <!-- aboutus -->
          <section class="section aboutus" id="aboutus">
-            <h2 class="aboutus__title">o nas</h2>
+            <h2 class="aboutus__title" data-aos="fade-up">o nas</h2>
             <div class="aboutus__box">
-               <img src="../../../dist/img/waters-3095682_1920.jpg" alt="zdjęcie pięknego lasu" class="aboutus__img">
-               <div class="aboutus__text-box">
+               <img src="./dist/img/waters-3095682_1920.jpg" alt="zdjęcie pięknego lasu" class="aboutus__img" data-aos="fade-right" data-aos-delay="300" />
+               <div class="aboutus__text-box" data-aos="fade-left" data-aos-delay="300">
                   <h3 class="aboutus__heading">Niezapomniane przygody</h3>
                   <p class="aboutus__text">
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -39,17 +40,17 @@
             </div>
          </section>
          <!-- divider -->
-         <div class="divider section " id="divider">
+         <div class="divider section" id="divider">
             <div class="divider__img"></div>
             <div class="divider__shadow"></div>
-            <p class="divider__text">Przygoda dla całej rodziny</p>
+            <p class="divider__text" data-aos="fade-up" data-aos-delay="300">Przygoda dla całej rodziny</p>
          </div>
          <!-- offer -->
          <section class="section offer" id="offer">
-            <h2 class="offer__title">oferta</h2>
-            <p class="offer__text">Wybierz jedną z naszych wspaniałych opcji!</p>
+            <h2 class="offer__title" data-aos="fade-up">oferta</h2>
+            <p class="offer__text" data-aos="fade-up" data-aos-delay="150">Wybierz jedną z naszych wspaniałych opcji!</p>
             <div class="offer__box">
-               <div class="offer__card">
+               <div class="offer__card" data-aos="fade-up" data-aos-delay="300">
                   <p class="offer__card-title">Demo</p>
                   <h3 class="offer__card-price">$0</h3>
                   <div class="offer__card-description">
@@ -62,7 +63,7 @@
                   <button class="offer__btn">Wybierz</button>
                </div>
 
-               <div class="offer__card">
+               <div class="offer__card" data-aos="fade-up" data-aos-delay="450">
                   <p class="offer__card-title">Standard</p>
                   <h3 class="offer__card-price">$99</h3>
                   <div class="offer__card-description">
@@ -75,7 +76,7 @@
                   <button class="offer__btn">Wybierz</button>
                </div>
 
-               <div class="offer__card">
+               <div class="offer__card" data-aos="fade-up" data-aos-delay="600">
                   <p class="offer__card-title">Premium</p>
                   <h3 class="offer__card-price">$299</h3>
                   <div class="offer__card-description">
@@ -88,14 +89,19 @@
                   <button class="offer__btn">Wybierz</button>
                </div>
             </div>
-            <h3 class="offer__lower-text">
-               Nie znalazłeś <a href="offer.html" class="offer__lower-text-link" >oferty</a> dla siebie? Sprawdź więcej możliwości w podstronie <a href="offer.html" class="offer__lower-text-link" >oferty</a>!
-            </h3>
-      
+            <h3 class="offer__lower-text" data-aos="fade-up" data-aos-delay="300">Nie znalazłeś <a href="offer.html" class="offer__lower-text-link">oferty</a> dla siebie? Sprawdź więcej możliwości w podstronie <a href="offer.html" class="offer__lower-text-link">oferty</a>!</h3>
          </section>
       </main>
       <!-- @include 'footer.kit' -->
-
-      <script src="./dist/js/bundle.min.js"></script>
+      <!-- aos -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init({
+            startEvent: "DOMContentLoaded",
+            offset: 100,
+            once: true,
+         });
+      </script>
+      <script src="./dist/js/main.min.js"></script>
    </body>
 </html>

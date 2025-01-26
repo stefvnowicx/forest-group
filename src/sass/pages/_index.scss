@@ -287,7 +287,7 @@
    }
    &__lower-text {
       position: relative;
-      width: 80%;
+      width: 220px;
       font-size: 1.4em;
       margin-top: 1.4em;
       &::after {
@@ -328,6 +328,11 @@
             }
          }
       }
+   }
+}
+@media(min-width: 375px){
+   .offer__lower-text{
+      width: 350px;
    }
 }
 
@@ -378,6 +383,9 @@
       &__btn {
          font-size: 1.2em;
       }
+      &__lower-text {
+         width: 450px;
+      }
    }
 }
 // md
@@ -388,6 +396,9 @@
          font-size: 2em;
          width: 400px;
       }
+   }
+   .offer__lower-text {
+      width: 550px;
    }
 }
 
@@ -463,6 +474,12 @@
          }
          &-description {
             font-size: 1em;
+         }
+      }
+      &__lower-text{
+         width: 900px;
+         &::after{
+            width: 930px;
          }
       }
    }

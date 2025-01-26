@@ -41,8 +41,7 @@
       &-box {
          position: relative;
       }
-      &-input,
-      &-textarea {
+      &-input {
          width: 100%;
          padding: 0.5em 1em;
          font-size: 1em;
@@ -53,6 +52,17 @@
          &:focus + .contact__form-label {
             transform: translate(5%, -150%);
             color: $main-color;
+         }
+         &:focus {
+            outline: 1px solid $main-color;
+            border: transparent;
+         }
+         &--textarea {
+            resize: vertical;
+            min-height: 150px;
+            + .contact__form-label {
+               top: 15%;
+            }
          }
       }
       &-label {
@@ -65,17 +75,12 @@
          z-index: 1;
          background-color: $white;
       }
-      &-textarea {
-         resize: vertical;
-         min-height: 150px;
-         + .contact__form-label {
-            top: 15%;
-         }
-      }
       &-error {
          font-weight: 500;
          color: rgb(224, 0, 0);
          margin-bottom: 0.3em;
+         justify-self: flex-start;
+         display: none;
       }
 
       &-btn {
@@ -127,7 +132,7 @@
             }
          }
       }
-      &-title{
+      &-title {
          position: absolute;
          left: 50%;
          top: -20px;
@@ -139,6 +144,78 @@
          border: 1px solid $secondary-color;
       }
    }
+   &__policy {
+      width: 270px;
+      margin-top: 1em;
+      font-weight: normal;
+      font-size: 1em;
+      &-link {
+         font-weight: bold;
+         position: relative;
+         z-index: 10;
+         transition: color 0.3s;
+         text-decoration: none;
+         color: $black;
+         cursor: pointer;
+         transition: color 0.3s;
+         &:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $main-color;
+            z-index: -1;
+            transition: height 0.3s;
+         }
+         &:hover,
+         &:focus {
+            color: $white;
+            &:before {
+               height: 100%;
+            }
+         }
+      }
+   }
+   &__info {
+      @include flex-column;
+      padding: 1em 0;
+      &-box {
+         padding: 0.5em;
+         @include flex-column;
+         i {
+            color: $main-color;
+            font-size: 1.4em;
+            padding: 0.3em;
+         }
+      }
+      &-text {
+         font-size: 1em;
+      }
+   }
+}
+.map {
+   position: relative;
+   width: 100%;
+   @include flex;
+   height: 250px;
+   iframe {
+      width: 80%;
+      height: 100%;
+      border: 1px solid $main-color;
+      border-radius: 5px;
+   }
+}
+
+.contact__form-label--active {
+   transform: translate(5%, -150%);
+   color: $main-color;
+}
+.contact__form-input--active {
+   outline: 1px solid $main-color;
+   border: transparent;
 }
 
 // sm
@@ -149,16 +226,37 @@
       }
       &__form {
          padding: 3em;
-         &-input,
-         &-textarea {
-            padding: 0.7em 1.4em;
-            font-size: 1.1em;
+         &-input {
+            &--textarea {
+               padding: 0.7em 1.4em;
+               font-size: 1.1em;
+            }
          }
          &-label {
-            top: 30px;
+            top: 25px;
             left: 3%;
          }
       }
+      &__policy {
+         width: 300px;
+         font-size: 1em;
+      }
+      &__info {
+         @include flex-column;
+         &-box {
+            padding: 0.5em;
+            i {
+               font-size: 1.6em;
+               padding: 0.3em;
+            }
+         }
+         &-text {
+            font-size: 1.1em;
+         }
+      }
+   }
+   .map {
+      height: 400px;
    }
 }
 
@@ -182,15 +280,61 @@
          }
          &-btn {
             grid-column: 1/3;
+            min-height: 35px;
+         }
+         &-input {
+            &--textarea {
+               min-height: 150px;
+            }
          }
       }
+      &__policy {
+         width: 900px;
+         font-size: 1.2em;
+      }
+      &__info {
+         flex-direction: row;
+         padding: 2em 2em;
+         &-box {
+            min-width: 330px;
+            flex-direction: row;
+            i {
+               color: $main-color;
+               font-size: 1.6em;
+               padding: 0.3em;
+            }
+         }
+         &-text {
+            font-size: 1.1em;
+         }
+      }
+   }
+   iframe {
+      max-width: 992px;
    }
 }
 
 @media (min-width: 1200px) {
-   .contact{
+   .contact {
       padding: 4em 6em;
-      &__form{
+      &__info {
+         &-box {
+            i {
+               color: $main-color;
+               font-size: 2em;
+               padding: 0.5em;
+            }
+         }
+         &-text {
+            font-size: 1.2em;
+         }
+      }
+      &__form-label {
+         font-size: 1.2em;
+      }
+   }
+   .map {
+      iframe {
          max-width: 1200px;
       }
    }

@@ -47,19 +47,41 @@
             <h2 class="contact__title">Kontakt</h2>
             <form class="contact__form">
                <h3 class="contact__form-title">Formularz kontaktowy</h3>
-               <div class="contact__form-box"><input type="text" class="contact__form-input" id="name" /><label for="name" class="contact__form-label">Imię</label>
-               <p class="contact__form-error">Musisz wypełnić te pole!</p></div>
-               <div class="contact__form-box"><input type="mail" class="contact__form-input" id="email" /><label for="email" class="contact__form-label">Email</label>
-               <p class="contact__form-error">Musisz wypełnić te pole!</p></div>
+               <div class="contact__form-box">
+                  <input type="text" class="contact__form-input" id="name" /><label for="name" class="contact__form-label">Imię</label>
+                  <p class="contact__form-error"></p>
+               </div>
+               <div class="contact__form-box">
+                  <input type="email" class="contact__form-input" id="email" /><label for="email" class="contact__form-label">Email</label>
+                  <p class="contact__form-error"></p>
+               </div>
 
                <div class="contact__form-box">
-                  <textarea id="msg" class="contact__form-textarea"></textarea>
+                  <textarea id="msg" class="contact__form-input contact__form-input--textarea"></textarea>
                   <label for="msg" class="contact__form-label">Twoja wiadomość</label>
-                  <p class="contact__form-error">Musisz wypełnić te pole!</p>
+                  <p class="contact__form-error"></p>
                </div>
                <button class="contact__form-btn">Wyślij</button>
             </form>
+            <h3 class="contact__policy">Wypełniając formularz, akceptujesz naszą <a href="#" class="contact__policy-link">Politykę prywatności.</a></h3>
+            <div class="contact__info">
+               <div class="contact__info-box">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p class="contact__info-text">Jasnogórska 2 Kraków</p>
+               </div>
+               <div class="contact__info-box">
+                  <i class="fa-solid fa-phone"></i>
+                  <p class="contact__info-text">+48 432 432 423</p>
+               </div>
+               <div class="contact__info-box">
+                  <i class="fa-solid fa-envelope"></i>
+                  <p class="contact__info-text">kontakt@forestgroup.pl</p>
+               </div>
+            </div>
          </section>
+         <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d639.9734925177885!2d19.8925629!3d50.088272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1737836783235!5m2!1spl!2spl"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
       </main>
       <footer class="footer">
    <div class="footer__top">
@@ -86,6 +108,6 @@
       <p class="footer__bottom-text">&copy; <span class="footer__year"></span> Forest Group</p>
    </div>
 </footer>
-      <script src="./dist/js/main.min.js"></script>
+      <script src="./dist/js/bundle.min.js"></script>
    </body>
 </html>

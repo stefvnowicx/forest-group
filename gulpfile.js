@@ -11,11 +11,12 @@ const clean = require("gulp-clean");
 const kit = require("gulp-kit");
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
+const concat = require("gulp-concat"); // Dodaj ten plugin
 
 const paths = {
    html: "./html/**/*.kit",
    sass: "./src/sass/**/*.scss",
-   js: "./src/js/**/*.js",
+   js: "./src/js/**/*.js", // Pliki JS do połączenia
    img: "./src/img/*",
    dist: "./dist",
    sassDest: "./dist/css",
@@ -36,23 +37,25 @@ function sassCompiler(done) {
 }
 
 function javascriptCompiler(done) {
-   src(paths.js)
-      .pipe(sourcemaps.init())
+   src(paths.js) // Wczytaj wszystkie pliki JS
+      .pipe(sourcemaps.init()) // Rozpocznij mapy źródłowe
+      .pipe(concat("bundle.min.js")) // Połącz pliki JS w jeden plik o nazwie "bundle.min.js"
       .pipe(
          babel({
-            presets: ["@babel/env"],
+            presets: ["@babel/env"], // Skompiluj ES6+ do ES5
          })
       )
-      .pipe(uglify())
-      .pipe(rename({ suffix: ".min" }))
-      .pipe(sourcemaps.write())
-      .pipe(dest(paths.jsDest));
+      .pipe(uglify()) // Minifikuj plik JS
+      .pipe(sourcemaps.write()) // Zapisz mapy źródłowe
+      .pipe(dest(paths.jsDest)); // Zapisz wynikowy plik JS do folderu docelowego
    done();
 }
+
 function imageConverter(done) {
    src(paths.img, { encoding: false }).pipe(imagemin()).pipe(dest(paths.imgDest));
    done();
 }
+
 function handleKits(done) {
    src(paths.html).pipe(kit()).pipe(dest("./"));
    done();
@@ -64,7 +67,6 @@ function cleanStuff(done) {
 }
 
 function startBrowserSync(done) {
-   // Inicjalizacja BrowserSync
    browserSync.init({
       server: {
          baseDir: "./",
@@ -72,9 +74,7 @@ function startBrowserSync(done) {
       notify: false,
       browser: "opera",
    });
-
    done();
-   //  skrót Ctrl+C w terminalu
 }
 
 function watchForChanges(done) {

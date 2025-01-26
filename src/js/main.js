@@ -33,26 +33,25 @@ links.forEach((link) => {
    link.addEventListener("mouseleave", () => {
       // aktualizuje sectionID przed sprawdzeniem
       handleObserver();
-   
+
       links.forEach((otherLink) => {
          if (otherLink !== link) {
             otherLink.style.transform = "scale(1)";
-   
+
             if (otherLink.hash === `#${sectionID}`) {
                otherLink.classList.add("nav__desktop-link--active");
             } else if (otherLink.hash === "#header" && sectionID === "nav") {
                otherLink.classList.add("nav__desktop-link--active");
             } else if (window.location.pathname.includes("offer.html")) {
-               handleLinks(); 
+               handleLinks();
                return;
-            } 
-            else if (window.location.pathname.includes("contact.html")) {
-               handleLinks(); 
+            } else if (window.location.pathname.includes("contact.html")) {
+               handleLinks();
                return;
-            } 
+            }
          }
       });
-   
+
       link.style.transform = "scale(1)";
    });
 });
@@ -67,28 +66,28 @@ handleCurrentYear();
 // scrollspy --- linki
 const handleLinks = () => {
    links.forEach((link) => {
-       link.classList.remove("nav__desktop-link--active");
+      link.classList.remove("nav__desktop-link--active");
 
-       // Dla strony offer.html
-       if (window.location.pathname.includes('offer.html')) {
-           if (link.hash === '#offer') {
-               link.classList.add("nav__desktop-link--active");
-           }
-       } 
+      // Dla strony offer.html
+      if (window.location.pathname.includes("offer.html")) {
+         if (link.hash === "#offer") {
+            link.classList.add("nav__desktop-link--active");
+         }
+      }
       //  dla contact
-       if (window.location.pathname.includes('contact.html')) {
-           if (link.hash === '#contact') {
-               link.classList.add("nav__desktop-link--active");
-           }
-       } 
-       // Dla strony index.html
-       else {
-           if (sectionID === "nav" && link.hash === '#header') {
-               link.classList.add("nav__desktop-link--active");
-           } else if (link.hash === `#${sectionID}`) {
-               link.classList.add("nav__desktop-link--active");
-           }
-       }
+      if (window.location.pathname.includes("contact.html")) {
+         if (link.hash === "#contact") {
+            link.classList.add("nav__desktop-link--active");
+         }
+      }
+      // Dla strony index.html
+      else {
+         if (sectionID === "nav" && link.hash === "#header") {
+            link.classList.add("nav__desktop-link--active");
+         } else if (link.hash === `#${sectionID}`) {
+            link.classList.add("nav__desktop-link--active");
+         }
+      }
    });
 };
 // zmiana koloru burgera
@@ -121,7 +120,7 @@ const handleObserver = () => {
 
       if (currentSection <= 60) {
          sectionID = "nav";
-         handleLinks()
+         handleLinks();
          handleBurgerColors();
          return;
       }
@@ -147,14 +146,14 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
    // Dodaj transition do kart po inicjalizacji AOS
    const cards = document.querySelectorAll(".offer__card");
-   const otherCards = document.querySelectorAll(".other-offers__card")
-   
+   const otherCards = document.querySelectorAll(".other-offers__card");
 
    cards.forEach((card) => {
-     card.style.transition = "all 0.3s ease";
+      card.style.transition = "all 0.3s ease";
    });
 
    otherCards.forEach((card) => {
-     card.style.transition = "all 0.3s ease";
+      card.style.transition = "all 0.3s ease";
    });
- });
+});
+

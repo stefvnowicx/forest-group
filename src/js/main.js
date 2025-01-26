@@ -46,6 +46,10 @@ links.forEach((link) => {
                handleLinks(); 
                return;
             } 
+            else if (window.location.pathname.includes("contact.html")) {
+               handleLinks(); 
+               return;
+            } 
          }
       });
    
@@ -59,6 +63,7 @@ const handleCurrentYear = () => {
    footerYear.innerText = year;
 };
 handleCurrentYear();
+
 // scrollspy --- linki
 const handleLinks = () => {
    links.forEach((link) => {
@@ -67,6 +72,12 @@ const handleLinks = () => {
        // Dla strony offer.html
        if (window.location.pathname.includes('offer.html')) {
            if (link.hash === '#offer') {
+               link.classList.add("nav__desktop-link--active");
+           }
+       } 
+      //  dla contact
+       if (window.location.pathname.includes('contact.html')) {
+           if (link.hash === '#contact') {
                link.classList.add("nav__desktop-link--active");
            }
        } 
